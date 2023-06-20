@@ -60,6 +60,9 @@
                         let title = diaries[i]['title'];
                         let content = diaries[i]['content'];
                         let image_title = diaries[i]['file'];
+
+                        let time = diaries[i]['time']||'&infin;';
+
                         if (image_title == null) {
                             image_title = 'static/default-image.png';
                         };
@@ -74,7 +77,7 @@
                                     <img src="../${profile_img}" class="profile-icon" alt="UserProfile">
                                     <h5 class="card-title">${title}</h5>
                                     <p class="card-text">${content}</p>
-                                    <h6 class="card-subtitle mb-2 text-muted">Diary</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">${time}</h6>
                                 </div>
                             </div>
 

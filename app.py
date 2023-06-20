@@ -38,6 +38,9 @@ def postdiary():
     file_name_profile = f'static/profile/upload-{unique_id}.{extension}'
     profile_receive.save(file_name_profile)
 
+    
+
+    time = today.strftime ('%Y.%m.%d')
     #yang diminta om mentor korea :v
     # Jika title dan deskripsi tidak ada maka return error, image hanyalah opsional
     if not title_receive or not content_receive :
@@ -48,7 +51,8 @@ def postdiary():
             'file' : file_name_image,
             'profile' : file_name_profile,
             'title' : title_receive,
-            'content' : content_receive
+            'content' : content_receive,
+            'time' : time
         }
         # --- Kirim ke MongoDB
         db.diary.insert_one(doc)
